@@ -21,6 +21,34 @@
             <rect x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
             <circle cx="50" cy="50" r="25" fill="#D50000" stroke="#FFFFFF"/>
         </svg>
+        
+        <!-- reusing the shapes with use tag -->
+        <svg  class="dice" width="200" height="200" viewBox="0 0 200 200">
+            <rect id="box" x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+            <circle id="dot" cx="50" cy="50" r="25" fill="#D50000" stroke="#FFFFFF"/>
+            <use xlink:href="#dot" x="100" />
+            <use xlink:href="#dot" x="100" y="100"/>
+            <use xlink:href="#dot" y="100" />
+        </svg>
+
+        <!--defs use and g tags-->
+        <svg  class="dice5" width="200" height="200" viewBox="0 0 200 200"
+        viewBox="0 0 200 200">
+            <defs>
+                <rect class="box" x="0" y="0" width="200" height="200" rx="8" ry="8" fill="#4DD0E1"/>
+                <circle id="point" cx="50" cy="50" r="25" fill="#D50000" stroke="#FFFFFF"/>
+            </defs>
+            <!--↑definitionの略、再利用したいものを中に入れる -->
+            <use xlink:href="#box" x="0" y="0" />
+            <g>
+                <use xlink:href="#point" x="0" y="0" />
+                <use xlink:href="#point" x="100" y="0" />
+                <use xlink:href="#point" x="100" y="100" />
+                <use xlink:href="#point" x="0" y="100" />
+                <use xlink:href="#point" x="50" y="50" />
+            </g>
+        </svg>
+
     </div>
 </body>
 
